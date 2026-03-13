@@ -48,9 +48,9 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pwd_context&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;verify&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;plain_password&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;hashed_password&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;​		用户设置的密码不能以明文的方式存入数据库中，一般要经过加密，&lt;code&gt;bcrypt&lt;/code&gt;提供了一种不可逆的&lt;strong&gt;密码哈希&lt;/strong&gt;，核心是通过&lt;code&gt;salt = bcrypt.gensalt(rounds=12)&lt;/code&gt;这种生成&lt;strong&gt;随机盐&lt;/strong&gt;的方式，与版本标识、哈希值等进行再组合而生成的最终密文，由于盐的随机生成性，可以保证&lt;strong&gt;相同明文可以生成不同的密文&lt;/strong&gt;。&lt;/p&gt;
-&lt;p&gt;​		问题：&lt;span style=&#34;color:orange&#34;&gt;如果生成的密文不同，那&lt;code&gt;verify_password&lt;/code&gt;是怎么让用户输入的密码与数据库的哈希值进行比对的？&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;​		实际上&lt;code&gt;verify()&lt;/code&gt;函数并不是对用户输入的密码进行再加密后与数据库密文进行比对，而是提取了数据库中保存的密码密文中的&lt;strong&gt;盐值&lt;/strong&gt;，再与输入密码的明文进行&lt;code&gt;bcrypt&lt;/code&gt;加密，这里的盐值&lt;strong&gt;不再具有随机性&lt;/strong&gt;，因此加密出的密文是相同的，达到了一个安全性与验证性兼顾的效果。&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;用户设置的密码不能以明文的方式存入数据库中，一般要经过加密，&lt;code&gt;bcrypt&lt;/code&gt;提供了一种不可逆的&lt;strong&gt;密码哈希&lt;/strong&gt;，核心是通过&lt;code&gt;salt = bcrypt.gensalt(rounds=12)&lt;/code&gt;这种生成&lt;strong&gt;随机盐&lt;/strong&gt;的方式，与版本标识、哈希值等进行再组合而生成的最终密文，由于盐的随机生成性，可以保证&lt;strong&gt;相同明文可以生成不同的密文&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;问题：&lt;span style=&#34;color:orange&#34;&gt;如果生成的密文不同，那&lt;code&gt;verify_password&lt;/code&gt;是怎么让用户输入的密码与数据库的哈希值进行比对的？&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;实际上&lt;code&gt;verify()&lt;/code&gt;函数并不是对用户输入的密码进行再加密后与数据库密文进行比对，而是提取了数据库中保存的密码密文中的&lt;strong&gt;盐值&lt;/strong&gt;，再与输入密码的明文进行&lt;code&gt;bcrypt&lt;/code&gt;加密，这里的盐值&lt;strong&gt;不再具有随机性&lt;/strong&gt;，因此加密出的密文是相同的，达到了一个安全性与验证性兼顾的效果。&lt;/p&gt;
 &lt;h3 id=&#34;22-生成token&#34;&gt;2.2 生成token
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -76,11 +76,12 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;jwt&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;encode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;to_encode&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;SECRET_KEY&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;algorithm&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;ALGORITHM&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;​		用户在成功登陆之后都会生成一段token，在token的有效时间内不需要重新登录就能访问所有API。&lt;code&gt;expire&lt;/code&gt;是&lt;strong&gt;当前国际时间加上token有效时长&lt;/strong&gt;而确定的一个最终到期时间，token的生成根据开发者的需要会到用户名、到期时间等变量，这也是我们要传入一个&lt;code&gt;data:dirt&lt;/code&gt;字典类型的原因，同时用于token生成的&lt;code&gt;to_encode&lt;/code&gt;也要采用&lt;code&gt;copy()&lt;/code&gt;的形式，因为频繁更改原始数据会降低安全性。&lt;/p&gt;
-&lt;p&gt;​		问题：&lt;span style=&#34;color:orange&#34;&gt;一段token最终如何生成，又如何保证安全性？&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;​		用&lt;strong&gt;JWT&lt;/strong&gt;生成的token由三个部分组成&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;用户在成功登陆之后都会生成一段token，在token的有效时间内不需要重新登录就能访问所有API。&lt;code&gt;expire&lt;/code&gt;是&lt;strong&gt;当前国际时间加上token有效时长&lt;/strong&gt;而确定的一个最终到期时间，token的生成根据开发者的需要会到用户名、到期时间等变量，这也是我们要传入一个&lt;code&gt;data:dirt&lt;/code&gt;字典类型的原因，同时用于token生成的&lt;code&gt;to_encode&lt;/code&gt;也要采用&lt;code&gt;copy()&lt;/code&gt;的形式，因为频繁更改原始数据会降低安全性。&lt;/p&gt;
+&lt;p&gt;问题：&lt;span style=&#34;color:orange&#34;&gt;一段token最终如何生成，又如何保证安全性？&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;用&lt;strong&gt;JWT&lt;/strong&gt;生成的token由三个部分组成&lt;/p&gt;
 &lt;img src=&#34;./images/JWT的token结构.png&#34; style=&#34;zoom: 33%;&#34; /&gt;
-&lt;p&gt;​		&lt;code&gt;jwt.encode(to_encode,SECRET_KEY,algorithm=ALGORITHM)&lt;/code&gt;这里的三个参数，&lt;code&gt;ALGORITHM&lt;/code&gt;决定了我们所用的加密算法，&lt;code&gt;to_encode&lt;/code&gt;是从用户那里收集的信息通过&lt;strong&gt;Base64&lt;/strong&gt;编码放进token，要注意&lt;strong&gt;Base64不是加密&lt;/strong&gt;，任何人都可以解码，所以不能收集密码等敏感信息用于token生成。而确保安全性的&lt;code&gt;SECRET_KEY&lt;/code&gt;是由手动设置的一串密钥，密钥与&lt;strong&gt;头部&lt;/strong&gt;和&lt;strong&gt;Payload&lt;/strong&gt;进行加密生成&lt;strong&gt;Signature（签名）&lt;/strong&gt;，只要他人拿不到这串密钥，就无法生成正确的签名，这就是JWT用于保证安全性的方式&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;jwt.encode(to_encode,SECRET_KEY,algorithm=ALGORITHM)&lt;/code&gt;这里的三个参数，&lt;code&gt;ALGORITHM&lt;/code&gt;决定了我们所用的加密算法，&lt;code&gt;to_encode&lt;/code&gt;是从用户那里收集的信息通过&lt;strong&gt;Base64&lt;/strong&gt;编码放进token，要注意&lt;strong&gt;Base64不是加密&lt;/strong&gt;，任何人都可以解码，所以不能收集密码等敏感信息用于token生成。&lt;/p&gt;
+&lt;p&gt;而确保安全性的&lt;code&gt;SECRET_KEY&lt;/code&gt;是由手动设置的一串密钥，密钥与&lt;strong&gt;头部&lt;/strong&gt;和&lt;strong&gt;Payload&lt;/strong&gt;进行加密生成&lt;strong&gt;Signature（签名）&lt;/strong&gt;，只要他人拿不到这串密钥，就无法生成正确的签名，这就是JWT用于保证安全性的方式&lt;/p&gt;
 &lt;h3 id=&#34;23-token验证&#34;&gt;2.3 token验证
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -134,13 +135,13 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;username&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;​		具体怎么实现token的过期验证，需要把这两段代码结合起来看，首先&lt;code&gt;decode_token&lt;/code&gt;是尝试一个获取用户名的函数，正如JWT的三个部分所呈现的那样，&lt;strong&gt;Payload&lt;/strong&gt;是用户名和过期时间通过&lt;strong&gt;Base64&lt;/strong&gt;转换过去的，可以被我们解码后获取。而&lt;code&gt;jwt.decode&lt;/code&gt;会做三件事：&lt;/p&gt;
+&lt;/div&gt;&lt;p&gt;具体怎么实现token的过期验证，需要把这两段代码结合起来看，首先&lt;code&gt;decode_token&lt;/code&gt;是尝试一个获取用户名的函数，正如JWT的三个部分所呈现的那样，&lt;strong&gt;Payload&lt;/strong&gt;是用户名和过期时间通过&lt;strong&gt;Base64&lt;/strong&gt;转换过去的，可以被我们解码后获取。而&lt;code&gt;jwt.decode&lt;/code&gt;会做三件事：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;em&gt;验证密钥是否正确&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;验证token是否被篡改&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;检查exp字段（也就是过期时间）是否过期&lt;/em&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;​		如果token过期，抛出&lt;code&gt;JWTError&lt;/code&gt;的异常，返回&lt;code&gt;None&lt;/code&gt;。在用户每次&lt;strong&gt;请求API&lt;/strong&gt;的时候，都会传入&lt;code&gt;get_current_user&lt;/code&gt;的参数，要求返回用户名，如果是&lt;code&gt;None&lt;/code&gt;，说明token已经过期，要求用户&lt;strong&gt;重新登录&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;如果token过期，抛出&lt;code&gt;JWTError&lt;/code&gt;的异常，返回&lt;code&gt;None&lt;/code&gt;。在用户每次&lt;strong&gt;请求API&lt;/strong&gt;的时候，都会传入&lt;code&gt;get_current_user&lt;/code&gt;的参数，要求返回用户名，如果是&lt;code&gt;None&lt;/code&gt;，说明token已经过期，要求用户&lt;strong&gt;重新登录&lt;/strong&gt;。&lt;/p&gt;
 &lt;h3 id=&#34;24-全部代码&#34;&gt;2.4 全部代码
 &lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -209,7 +210,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
 &lt;/div&gt;&lt;hr&gt;
-&lt;p&gt;虽然只用了一点基础功能，感觉Markdown写出来还是足够好看的。&lt;/p&gt;
+&lt;p&gt;虽然只用了一点基础功能，感觉Markdown写出来还是足够好看的。网页排版里要首行缩进还要改CSS的格式，干脆就不缩进了。&lt;/p&gt;
 </description>
         </item>
         <item>

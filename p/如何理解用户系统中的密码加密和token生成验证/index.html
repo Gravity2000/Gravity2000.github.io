@@ -438,9 +438,9 @@
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">pwd_context</span><span class="o">.</span><span class="n">verify</span><span class="p">(</span><span class="n">plain_password</span><span class="p">,</span><span class="n">hashed_password</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>​		用户设置的密码不能以明文的方式存入数据库中，一般要经过加密，<code>bcrypt</code>提供了一种不可逆的<strong>密码哈希</strong>，核心是通过<code>salt = bcrypt.gensalt(rounds=12)</code>这种生成<strong>随机盐</strong>的方式，与版本标识、哈希值等进行再组合而生成的最终密文，由于盐的随机生成性，可以保证<strong>相同明文可以生成不同的密文</strong>。</p>
-<p>​		问题：<span style="color:orange">如果生成的密文不同，那<code>verify_password</code>是怎么让用户输入的密码与数据库的哈希值进行比对的？</span></p>
-<p>​		实际上<code>verify()</code>函数并不是对用户输入的密码进行再加密后与数据库密文进行比对，而是提取了数据库中保存的密码密文中的<strong>盐值</strong>，再与输入密码的明文进行<code>bcrypt</code>加密，这里的盐值<strong>不再具有随机性</strong>，因此加密出的密文是相同的，达到了一个安全性与验证性兼顾的效果。</p>
+</div><p>用户设置的密码不能以明文的方式存入数据库中，一般要经过加密，<code>bcrypt</code>提供了一种不可逆的<strong>密码哈希</strong>，核心是通过<code>salt = bcrypt.gensalt(rounds=12)</code>这种生成<strong>随机盐</strong>的方式，与版本标识、哈希值等进行再组合而生成的最终密文，由于盐的随机生成性，可以保证<strong>相同明文可以生成不同的密文</strong>。</p>
+<p>问题：<span style="color:orange">如果生成的密文不同，那<code>verify_password</code>是怎么让用户输入的密码与数据库的哈希值进行比对的？</span></p>
+<p>实际上<code>verify()</code>函数并不是对用户输入的密码进行再加密后与数据库密文进行比对，而是提取了数据库中保存的密码密文中的<strong>盐值</strong>，再与输入密码的明文进行<code>bcrypt</code>加密，这里的盐值<strong>不再具有随机性</strong>，因此加密出的密文是相同的，达到了一个安全性与验证性兼顾的效果。</p>
 <h3 id="22-生成token">2.2 生成token
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -466,11 +466,12 @@
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">jwt</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">to_encode</span><span class="p">,</span><span class="n">SECRET_KEY</span><span class="p">,</span><span class="n">algorithm</span><span class="o">=</span><span class="n">ALGORITHM</span><span class="p">)</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>​		用户在成功登陆之后都会生成一段token，在token的有效时间内不需要重新登录就能访问所有API。<code>expire</code>是<strong>当前国际时间加上token有效时长</strong>而确定的一个最终到期时间，token的生成根据开发者的需要会到用户名、到期时间等变量，这也是我们要传入一个<code>data:dirt</code>字典类型的原因，同时用于token生成的<code>to_encode</code>也要采用<code>copy()</code>的形式，因为频繁更改原始数据会降低安全性。</p>
-<p>​		问题：<span style="color:orange">一段token最终如何生成，又如何保证安全性？</span></p>
-<p>​		用<strong>JWT</strong>生成的token由三个部分组成</p>
+</div><p>用户在成功登陆之后都会生成一段token，在token的有效时间内不需要重新登录就能访问所有API。<code>expire</code>是<strong>当前国际时间加上token有效时长</strong>而确定的一个最终到期时间，token的生成根据开发者的需要会到用户名、到期时间等变量，这也是我们要传入一个<code>data:dirt</code>字典类型的原因，同时用于token生成的<code>to_encode</code>也要采用<code>copy()</code>的形式，因为频繁更改原始数据会降低安全性。</p>
+<p>问题：<span style="color:orange">一段token最终如何生成，又如何保证安全性？</span></p>
+<p>用<strong>JWT</strong>生成的token由三个部分组成</p>
 <img src="./images/JWT的token结构.png" style="zoom: 33%;" />
-<p>​		<code>jwt.encode(to_encode,SECRET_KEY,algorithm=ALGORITHM)</code>这里的三个参数，<code>ALGORITHM</code>决定了我们所用的加密算法，<code>to_encode</code>是从用户那里收集的信息通过<strong>Base64</strong>编码放进token，要注意<strong>Base64不是加密</strong>，任何人都可以解码，所以不能收集密码等敏感信息用于token生成。而确保安全性的<code>SECRET_KEY</code>是由手动设置的一串密钥，密钥与<strong>头部</strong>和<strong>Payload</strong>进行加密生成<strong>Signature（签名）</strong>，只要他人拿不到这串密钥，就无法生成正确的签名，这就是JWT用于保证安全性的方式</p>
+<p><code>jwt.encode(to_encode,SECRET_KEY,algorithm=ALGORITHM)</code>这里的三个参数，<code>ALGORITHM</code>决定了我们所用的加密算法，<code>to_encode</code>是从用户那里收集的信息通过<strong>Base64</strong>编码放进token，要注意<strong>Base64不是加密</strong>，任何人都可以解码，所以不能收集密码等敏感信息用于token生成。</p>
+<p>而确保安全性的<code>SECRET_KEY</code>是由手动设置的一串密钥，密钥与<strong>头部</strong>和<strong>Payload</strong>进行加密生成<strong>Signature（签名）</strong>，只要他人拿不到这串密钥，就无法生成正确的签名，这就是JWT用于保证安全性的方式</p>
 <h3 id="23-token验证">2.3 token验证
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -524,13 +525,13 @@
 </span></span><span class="line"><span class="cl">  <span class="k">return</span> <span class="n">username</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>​		具体怎么实现token的过期验证，需要把这两段代码结合起来看，首先<code>decode_token</code>是尝试一个获取用户名的函数，正如JWT的三个部分所呈现的那样，<strong>Payload</strong>是用户名和过期时间通过<strong>Base64</strong>转换过去的，可以被我们解码后获取。而<code>jwt.decode</code>会做三件事：</p>
+</div><p>具体怎么实现token的过期验证，需要把这两段代码结合起来看，首先<code>decode_token</code>是尝试一个获取用户名的函数，正如JWT的三个部分所呈现的那样，<strong>Payload</strong>是用户名和过期时间通过<strong>Base64</strong>转换过去的，可以被我们解码后获取。而<code>jwt.decode</code>会做三件事：</p>
 <ul>
 <li><em>验证密钥是否正确</em></li>
 <li><em>验证token是否被篡改</em></li>
 <li><em>检查exp字段（也就是过期时间）是否过期</em></li>
 </ul>
-<p>​		如果token过期，抛出<code>JWTError</code>的异常，返回<code>None</code>。在用户每次<strong>请求API</strong>的时候，都会传入<code>get_current_user</code>的参数，要求返回用户名，如果是<code>None</code>，说明token已经过期，要求用户<strong>重新登录</strong>。</p>
+<p>如果token过期，抛出<code>JWTError</code>的异常，返回<code>None</code>。在用户每次<strong>请求API</strong>的时候，都会传入<code>get_current_user</code>的参数，要求返回用户名，如果是<code>None</code>，说明token已经过期，要求用户<strong>重新登录</strong>。</p>
 <h3 id="24-全部代码">2.4 全部代码
 </h3><div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -599,7 +600,7 @@
 </span></span></code></pre></td></tr></table>
 </div>
 </div><hr>
-<p>虽然只用了一点基础功能，感觉Markdown写出来还是足够好看的。</p>
+<p>虽然只用了一点基础功能，感觉Markdown写出来还是足够好看的。网页排版里要首行缩进还要改CSS的格式，干脆就不缩进了。</p>
 
 </section>
 
