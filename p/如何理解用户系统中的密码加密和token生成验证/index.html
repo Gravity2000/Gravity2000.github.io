@@ -415,7 +415,20 @@
 <p>很多业务会选择长短token的<strong>双token机制</strong>，长token设置超过一天的较长时间，短token过期后，让长token进行验证，通过后直接发放新的短token（而不是为短token续期），让用户可以长期使用。</p>
 <p>长token往往设置几天甚至一个月的时间，可像微信等大量软件几乎不需要重新登录，利用更底层的，与设备绑定的<strong>设备信任</strong>可以跳出token的有效期，创造一种“永不登录”的体验。不过像微信内置的小程序根据开发者不同的需求，还是以token验证机制为主。</p>
 <p>最简单的token过期机制，以30分钟为例，流程大概如下图：</p>
-<img src="./images/单token机制.png" style="zoom: 33%;" />
+<p><img src="/p/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E7%94%A8%E6%88%B7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%AF%86%E7%A0%81%E5%8A%A0%E5%AF%86%E5%92%8Ctoken%E7%94%9F%E6%88%90%E9%AA%8C%E8%AF%81/images/%E5%8D%95token%E6%9C%BA%E5%88%B6.png"
+	width="1894"
+	height="2928"
+	srcset="/p/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E7%94%A8%E6%88%B7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%AF%86%E7%A0%81%E5%8A%A0%E5%AF%86%E5%92%8Ctoken%E7%94%9F%E6%88%90%E9%AA%8C%E8%AF%81/images/%E5%8D%95token%E6%9C%BA%E5%88%B6_hu_58e448aca5f0067b.png 480w, /p/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E7%94%A8%E6%88%B7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%AF%86%E7%A0%81%E5%8A%A0%E5%AF%86%E5%92%8Ctoken%E7%94%9F%E6%88%90%E9%AA%8C%E8%AF%81/images/%E5%8D%95token%E6%9C%BA%E5%88%B6_hu_74210fa88dc45c97.png 1024w"
+	loading="lazy"
+	
+		alt="单token机制"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="64"
+		data-flex-basis="155px"
+	
+></p>
 <h2 id="2代码拆解">2、代码拆解
 </h2><h3 id="21-加密验证">2.1 加密验证
 </h3><div class="highlight"><div class="chroma">
@@ -469,7 +482,20 @@
 </div><p>用户在成功登陆之后都会生成一段token，在token的有效时间内不需要重新登录就能访问所有API。<code>expire</code>是<strong>当前国际时间加上token有效时长</strong>而确定的一个最终到期时间，token的生成根据开发者的需要会到用户名、到期时间等变量，这也是我们要传入一个<code>data:dirt</code>字典类型的原因，同时用于token生成的<code>to_encode</code>也要采用<code>copy()</code>的形式，因为频繁更改原始数据会降低安全性。</p>
 <p>问题：<span style="color:orange">一段token最终如何生成，又如何保证安全性？</span></p>
 <p>用<strong>JWT</strong>生成的token由三个部分组成</p>
-<img src="./images/JWT的token结构.png" style="zoom: 33%;" />
+<p><img src="/p/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E7%94%A8%E6%88%B7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%AF%86%E7%A0%81%E5%8A%A0%E5%AF%86%E5%92%8Ctoken%E7%94%9F%E6%88%90%E9%AA%8C%E8%AF%81/images/JWT%E7%9A%84token%E7%BB%93%E6%9E%84.png"
+	width="2443"
+	height="867"
+	srcset="/p/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E7%94%A8%E6%88%B7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%AF%86%E7%A0%81%E5%8A%A0%E5%AF%86%E5%92%8Ctoken%E7%94%9F%E6%88%90%E9%AA%8C%E8%AF%81/images/JWT%E7%9A%84token%E7%BB%93%E6%9E%84_hu_e4babd1f64158dc7.png 480w, /p/%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E7%94%A8%E6%88%B7%E7%B3%BB%E7%BB%9F%E4%B8%AD%E7%9A%84%E5%AF%86%E7%A0%81%E5%8A%A0%E5%AF%86%E5%92%8Ctoken%E7%94%9F%E6%88%90%E9%AA%8C%E8%AF%81/images/JWT%E7%9A%84token%E7%BB%93%E6%9E%84_hu_51a3efee35972bdd.png 1024w"
+	loading="lazy"
+	
+		alt="JWT的Token结构"
+	
+	
+		class="gallery-image" 
+		data-flex-grow="281"
+		data-flex-basis="676px"
+	
+></p>
 <p><code>jwt.encode(to_encode,SECRET_KEY,algorithm=ALGORITHM)</code>这里的三个参数，<code>ALGORITHM</code>决定了我们所用的加密算法，<code>to_encode</code>是从用户那里收集的信息通过<strong>Base64</strong>编码放进token，要注意<strong>Base64不是加密</strong>，任何人都可以解码，所以不能收集密码等敏感信息用于token生成。</p>
 <p>而确保安全性的<code>SECRET_KEY</code>是由手动设置的一串密钥，密钥与<strong>头部</strong>和<strong>Payload</strong>进行加密生成<strong>Signature（签名）</strong>，只要他人拿不到这串密钥，就无法生成正确的签名，这就是JWT用于保证安全性的方式</p>
 <h3 id="23-token验证">2.3 token验证
