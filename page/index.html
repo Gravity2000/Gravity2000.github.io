@@ -10,7 +10,7 @@
 <meta property='og:description' content="进步和生活记录">
 <meta property='og:url' content='https://Gravity2000.github.io/page/'>
 <meta property='og:site_name' content='Yanami_Blog'>
-<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-03-30T05:40:06&#43;08:00 '/>
+<meta property='og:type' content='website'><meta property='og:updated_time' content=' 2026-04-07T20:14:35&#43;08:00 '/>
 <meta name="twitter:title" content="Pages">
 <meta name="twitter:description" content="进步和生活记录"><link rel="alternate" type="application/rss&#43;xml" href="https://Gravity2000.github.io/page/index.xml">
     <link rel="shortcut icon" href="/favicon.ico" />
@@ -440,6 +440,327 @@
         document.head.appendChild(customFont);
     }());
 </script>
+<div id="ai-pet-container">
+    
+    <div id="ai-pet" title="点击和我聊天！">
+        <img src="/images/pet.gif" alt="AI助手" draggable="false">
+        <div id="ai-pet-tip">点我聊天 !</div>
+    </div>
 
-    </body>
+    
+    <div id="ai-chat">
+        <div id="ai-header">
+            <span> 来自遥远的deepseek</span>
+            <button onclick="closeChat()">×</button>
+        </div>
+        <div id="ai-messages"></div>
+        <div id="ai-input-area">
+            <textarea id="ai-input" placeholder="输入问题，Enter 发送..." rows="2"></textarea>
+            <button id="ai-send" onclick="sendMessage()">发送</button>
+        </div>
+    </div>
+</div>
+
+<style>
+#ai-pet-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    user-select: none;
+}
+
+#ai-pet {
+    position: relative;
+    width: 120px;
+    cursor: pointer;
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+    transition: transform 0.2s;
+    animation: pet-float 3s ease-in-out infinite;
+}
+
+#ai-pet:hover {
+    transform: scale(1.05);
+}
+
+#ai-pet img {
+    width: 100%;
+    display: block;
+    mix-blend-mode: multiply;
+}
+
+@keyframes pet-float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+#ai-pet-tip {
+    position: absolute;
+    top: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: white;
+    color: #333;
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 12px;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+}
+
+#ai-pet-tip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 5px solid transparent;
+    border-top-color: white;
+}
+
+#ai-pet:hover #ai-pet-tip {
+    opacity: 1;
+}
+
+#ai-chat {
+    display: none;
+    position: absolute;
+    bottom: 130px;
+    right: 0;
+    width: 320px;
+    height: 440px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    flex-direction: column;
+    overflow: hidden;
+    animation: chat-popup 0.3s ease;
+}
+
+@keyframes chat-popup {
+    from { opacity: 0; transform: scale(0.9) translateY(10px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+#ai-header {
+    background: linear-gradient(135deg, #7B9FD4, #A89FD4);
+    color: white;
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+#ai-header button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.8;
+}
+
+#ai-header button:hover { opacity: 1; }
+
+#ai-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #f8f9ff;
+}
+
+.ai-msg {
+    max-width: 82%;
+    padding: 10px 14px;
+    border-radius: 14px;
+    font-size: 14px;
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+.ai-msg.user {
+    background: linear-gradient(135deg, #7B9FD4, #A89FD4);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 4px;
+}
+
+.ai-msg.assistant {
+    background: white;
+    color: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+#ai-input-area {
+    padding: 12px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 8px;
+    background: white;
+}
+
+#ai-input {
+    flex: 1;
+    border: 1.5px solid #ddd;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-size: 14px;
+    resize: none;
+    outline: none;
+    font-family: Arial, sans-serif;
+}
+
+#ai-input:focus { border-color: #A89FD4; }
+
+#ai-send {
+    background: linear-gradient(135deg, #7B9FD4, #A89FD4);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 14px;
+    cursor: pointer;
+    font-size: 14px;
+    white-space: nowrap;
+}
+
+#ai-send:hover { opacity: 0.9; }
+#ai-send:disabled { opacity: 0.5; cursor: not-allowed; }
+</style>
+
+<script>
+const API_URL = "https://ai-assistant-production-fc85.up.railway.app/chat";
+const SYSTEM_PROMPT = `你是王嘉琦个人技术博客的 AI 助手，性格活泼友好，回答简洁可爱。
+
+关于这个博客：
+- 博主：计算机科学与技术专业本科毕业
+- 博客地址：gravity2000.github.io
+- 主要内容：技术项目开发记录、游戏攻略、Steam 闪卡收集
+
+技术项目：
+- Steam 冷门闪卡价格监控系统：Python + FastAPI，监控价格低于期望值时邮件提醒
+- 待办事项 REST API：Python + FastAPI + SQLite
+- 本博客：Hugo + GitHub Pages，集成 AI 助手
+
+博主技术栈：Python、FastAPI、SQLAlchemy、PostgreSQL、JWT、Railway 部署
+
+如果被问到博客没有的内容，你可以调用你的模型解答。请不要透露博主的真名等个人信息`;
+
+let messages = [{ role: "system", content: SYSTEM_PROMPT }];
+let isOpen = false;
+let isDragging = false;
+let dragStartX, dragStartY, petStartX, petStartY;
+
+const container = document.getElementById("ai-pet-container");
+const pet = document.getElementById("ai-pet");
+const chat = document.getElementById("ai-chat");
+
+
+pet.addEventListener("mousedown", (e) => {
+    isDragging = false;
+    dragStartX = e.clientX;
+    dragStartY = e.clientY;
+    const rect = container.getBoundingClientRect();
+    petStartX = window.innerWidth - rect.right;
+    petStartY = window.innerHeight - rect.bottom;
+
+    const onMove = (e) => {
+        const dx = Math.abs(e.clientX - dragStartX);
+        const dy = Math.abs(e.clientY - dragStartY);
+        if (dx > 5 || dy > 5) isDragging = true;
+        if (isDragging) {
+            const newRight = petStartX - (e.clientX - dragStartX);
+            const newBottom = petStartY - (e.clientY - dragStartY);
+            container.style.right = Math.max(0, newRight) + "px";
+            container.style.bottom = Math.max(0, newBottom) + "px";
+        }
+    };
+
+    const onUp = () => {
+        document.removeEventListener("mousemove", onMove);
+        document.removeEventListener("mouseup", onUp);
+        if (!isDragging) toggleChat();
+    };
+
+    document.addEventListener("mousemove", onMove);
+    document.addEventListener("mouseup", onUp);
+});
+
+function toggleChat() {
+    isOpen = !isOpen;
+    chat.style.display = isOpen ? "flex" : "none";
+    if (isOpen && messages.length === 1) {
+        addMessage("assistant", "你好呀～我是这个博客的 AI 助手！有什么可以帮你的吗？✨");
+    }
+}
+
+function closeChat() {
+    isOpen = false;
+    chat.style.display = "none";
+}
+
+function addMessage(role, content) {
+    const messagesDiv = document.getElementById("ai-messages");
+    const msg = document.createElement("div");
+    msg.className = `ai-msg ${role}`;
+    msg.textContent = content;
+    messagesDiv.appendChild(msg);
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+    return msg;
+}
+
+async function sendMessage() {
+    const input = document.getElementById("ai-input");
+    const sendBtn = document.getElementById("ai-send");
+    const text = input.value.trim();
+    if (!text || sendBtn.disabled) return;
+
+    input.value = "";
+    sendBtn.disabled = true;
+
+    addMessage("user", text);
+    messages.push({ role: "user", content: text });
+
+    if (messages.length > 11) {
+        messages = [messages[0], ...messages.slice(-10)];
+    }
+
+    const thinkingMsg = addMessage("assistant", "思考中...");
+
+    try {
+        const response = await fetch(API_URL, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ messages: messages})
+        });
+        const data = await response.json();
+        const reply = data.choices[0].message.content;
+        thinkingMsg.textContent = reply;
+        messages.push({ role: "assistant", content: reply });
+    } catch (e) {
+        thinkingMsg.textContent = "连接失败，请稍后再试 😢";
+    }
+
+    sendBtn.disabled = false;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("ai-input").addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
+            sendMessage();
+        }
+    });
+});
+</script></body>
 </html>

@@ -7,7 +7,286 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>Yanami</copyright>
-        <lastBuildDate>Mon, 30 Mar 2026 05:40:06 +0800</lastBuildDate><atom:link href="https://Gravity2000.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Tue, 07 Apr 2026 20:14:35 +0800</lastBuildDate><atom:link href="https://Gravity2000.github.io/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>如何在网页配置一个AI小助手，根据网站内容解答问题（deepseek模型）</title>
+        <link>https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/</link>
+        <pubDate>Tue, 07 Apr 2026 20:14:35 +0800</pubDate>
+        
+        <guid>https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/</guid>
+        <description>&lt;img src="https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/1.png" alt="Featured image of post 如何在网页配置一个AI小助手，根据网站内容解答问题（deepseek模型）" /&gt;&lt;p&gt;昨天在railway部署的时候服务器波动了，半小时没能部署上，期间用railway的agent咨询发现它可以提取我的当前部署进度和多个项目的运行状态，根据railway的服务器常见问题，用户须知和操作守则来回答，对用户来说比人工客服更具专业性和快速性，非常实用。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-202301%281%29.png&#34;
+	width=&#34;348&#34;
+	height=&#34;1060&#34;
+	srcset=&#34;https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-202301%281%29_hu_e12e76b3b848aaac.png 480w, https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-202301%281%29_hu_6371ccfa8f99db61.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;railway agent&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;32&#34;
+		data-flex-basis=&#34;78px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;根据它的回答我查了railway&amp;rsquo;s status page果然当天服务器出了问题导致长时间部署不上，因此也避免了长时间的干等。&lt;/p&gt;
+&lt;p&gt;今天也在我的个人博客右下角搭了一个小AI，想让它根据我的博客内容回答问题。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-203522.png&#34;
+	width=&#34;994&#34;
+	height=&#34;1017&#34;
+	srcset=&#34;https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-203522_hu_49428206edcbab20.png 480w, https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-203522_hu_2f46063d5692683c.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;blog ai&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;97&#34;
+		data-flex-basis=&#34;234px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;1模型选取&#34;&gt;1、模型选取
+&lt;/h2&gt;&lt;p&gt;我自己本身只有claude的API，但是直接在网站接入claude非常不必要，首先博客网站不管是用户访问还是我自己把玩都不会遇到很技术性的问题，使用claude作为接口完全是大材小用；其次我自己使用下来claude虽然模型强大但是思考时间是比较长的，当我提出非技术性问题的时候我希望的是快速响应而不是深思熟虑，因此使用手上现有的API不是一个好的选择。&lt;/p&gt;
+&lt;p&gt;&lt;font color=&#34;blue&#34;&gt;为什么使用deepseek？&lt;/font&gt;&lt;/p&gt;
+&lt;p&gt;在使用deepseek网页版的时候我发现deepseek对于简单问题的响应非常快，采取非思考模式几乎是秒答，deepseek支持128K的上下文，对于博客小AI来说绰绰有余，最后最重要的是价格对比。&lt;/p&gt;
+&lt;p&gt;使用20美刀/月的claude，如果未来有更好的大模型，我不可能会坚持花每月20刀的价格去维持一个简单的博客AI，而deepseek采取token计费制，可以看到我请求了10次仅花费0.01元，10元预计可以再请求至少成千上万次的对话，未来的维护成本可以说极低，即使替换大模型也仅亏损个位数的token费用，是非常适合轻量基础小网站的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-205639.png&#34;
+	width=&#34;559&#34;
+	height=&#34;522&#34;
+	srcset=&#34;https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-205639_hu_25b61eadb12e3bc9.png 480w, https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-205639_hu_57eb5d9cd0185ef6.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;claude pro&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;107&#34;
+		data-flex-basis=&#34;257px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-205714.png&#34;
+	width=&#34;371&#34;
+	height=&#34;736&#34;
+	srcset=&#34;https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-205714_hu_9f7c5667e98f2fc7.png 480w, https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-205714_hu_e1281b50d2322f7.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;deepseek&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;50&#34;
+		data-flex-basis=&#34;120px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;2后端请求deepseek&#34;&gt;2、后端请求deepseek
+&lt;/h2&gt;&lt;p&gt;从deepseek platform创建一个API Keys，用于hugo博客。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-211113.png&#34;
+	width=&#34;976&#34;
+	height=&#34;298&#34;
+	srcset=&#34;https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-211113_hu_e5b9363d1aed325d.png 480w, https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-211113_hu_baf370d239021ca9.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;deepseek api&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;327&#34;
+		data-flex-basis=&#34;786px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;用户从博客网站请求deepseek回答，这里有两种请求方案&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;前端通过JavaScript请求&lt;/li&gt;
+&lt;li&gt;通过后端部署的网页请求&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;如果通过前端JavaScript请求，那请求时提交的deepseek的APIKEY就会暴露在请求体中，任何人通过F12查看网页元素都会找到这串API，这种暴露密钥的方式是极其不安全的。&lt;/p&gt;
+&lt;p&gt;如果通过请求接口的部署网站，那么JavaScript就会发请求给一个网址，这里就不会暴露API，而另一个请求deepseek的网址APIKEY是通过环境变量的方式保存的，因此也不会暴露，但是我们从博客A.com，访问部署了deepseek访问接口的B.com，就会出现浏览器跨域请求，浏览器会拦截这个请求，因此在python中需要导入解除浏览器跨域请求的corsmiddleware&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;FastAPI&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;app&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;add_middleware&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;CORSMiddleware&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;allow_origins&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;*&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;allow_methods&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;*&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;n&#34;&gt;allow_headers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;*&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;code&gt;add_middleware&lt;/code&gt;是一个浏览器里请求进出的拦截件，&lt;code&gt;CORSMiddleware&lt;/code&gt;解除跨域限制，&lt;code&gt;allow_origins&lt;/code&gt;表示允许哪些域名访问，&lt;code&gt;allow_methods&lt;/code&gt;表示允许哪些HTTP方法（GET\POST\PUT\DELETE）,&lt;code&gt;allow_headers&lt;/code&gt;表示允许哪些请求头，这里都设置为全部允许。&lt;/p&gt;
+&lt;p&gt;与大模型的对话有两个字段，&lt;strong&gt;由谁说，说了什么&lt;/strong&gt;，而一段新的对话都会被添加到之前所有对话的末端，形成一个超长的消息列表，这也就是大语言模型的上下文。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Message&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;BaseModel&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;role&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;str&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;str&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;ChatRequest&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;BaseModel&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;messages&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;List&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Message&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;利用&lt;code&gt;BaseModel&lt;/code&gt;规定了两个类，&lt;code&gt;BaseModel&lt;/code&gt;规定了发送数据的格式，&lt;code&gt;Message&lt;/code&gt;是一条对话的格式，&lt;code&gt;ChatRequest&lt;/code&gt;是deepseek收到的包含了上下文对话的消息列表，根据这段消息列表，deepseek会作出回答。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;上下文越多，token的消耗就越多&lt;/strong&gt;，但在这个项目中不需要超长上下文，只需要限制一下历史消息的条数控制token的消耗就行了。&lt;/p&gt;
+&lt;p&gt;最后是对deepseek会话的请求体，采用异步请求的原因是这类AI往往会出现同一时刻有不同用户请求的情况，如果不异步，那排在最后的用户会等前面所有用户请求完才收到答案，而异步则可以规避这类问题。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kn&#34;&gt;from&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;openai&lt;/span&gt; &lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;AsyncOpenAI&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;client&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;AsyncOpenAI&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;api_key&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;os&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;getenv&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;DEEPSEEK_API_KEY&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;),&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;base_url&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;https://api.deepseek.com&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nd&#34;&gt;@app.post&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;/chat&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;async&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;chat&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ChatRequest&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;response&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;await&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;client&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;chat&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;completions&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;create&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;deepseek-chat&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;messages&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;m&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dict&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;m&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;request&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;messages&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;],&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;stream&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;False&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;choices&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;[{&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;message&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;content&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;response&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;choices&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;message&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;content&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;}}]}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这段写法来自deepseek的官方API文档&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-220047.png&#34;
+	width=&#34;955&#34;
+	height=&#34;777&#34;
+	srcset=&#34;https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-220047_hu_d69178dbeb384bbf.png 480w, https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-220047_hu_232fedbd3f38363b.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;deepseek/docs&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;122&#34;
+		data-flex-basis=&#34;294px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;这里把之前的消息列表转换成了字典的格式上传，并不是单纯的绕远路，如果对话过程中出了错误，消息列表能快速定位到报错的位置。&lt;/p&gt;
+&lt;h2 id=&#34;3如何让ai助手根据博客内容回答问题&#34;&gt;3、如何让AI助手根据博客内容回答问题
+&lt;/h2&gt;&lt;p&gt;将接口部署后配置在博客页面，如果直接问，这时deepseek是一无所知的。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-195222.png&#34;
+	width=&#34;324&#34;
+	height=&#34;303&#34;
+	srcset=&#34;https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-195222_hu_5d5c7b623e892766.png 480w, https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-195222_hu_2226232fc3c869c2.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;1&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;106&#34;
+		data-flex-basis=&#34;256px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;最简单的方式是通过 &lt;strong&gt;System Prompt&lt;/strong&gt; 注入博客信息。&lt;/p&gt;
+&lt;p&gt;每次对话开始前，我们会在消息列表的第一条插入一段&amp;quot;系统提示词&amp;quot;，告诉 AI 它的身份和背景知识：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;SYSTEM_PROMPT&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;sb&#34;&gt;`你是一个个人技术博客的 AI 助手。
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;关于这个博客：
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;- 博客地址：gravity2000.github.io
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;- 博主：计算机科学与技术专业毕业，男生
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;- 主要内容：技术项目开发记录、游戏攻略、Steam 闪卡收集
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;技术项目：
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;- Steam 冷门闪卡价格监控系统：Python + FastAPI
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;sb&#34;&gt;- 待办事项 REST API：Python + FastAPI + SQLite`&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;err&#34;&gt;#&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;添加所有想让AI知道的信息&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-200716.png&#34;
+	width=&#34;329&#34;
+	height=&#34;382&#34;
+	srcset=&#34;https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-200716_hu_86218c5e929160d2.png 480w, https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-200716_hu_34550b109aff8df4.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;2&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;86&#34;
+		data-flex-basis=&#34;206px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;System Prompt 只能包含你手动写进去的内容，AI 不会自动爬取博客。所以当被问到博客之外的问题时，AI 仍然会用自己的通用知识回答，比如&amp;quot;南非的首都在哪里&amp;quot;，它会正确回答。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-201147.png&#34;
+	width=&#34;317&#34;
+	height=&#34;437&#34;
+	srcset=&#34;https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-201147_hu_c51bdba69d554f51.png 480w, https://Gravity2000.github.io/p/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%BD%91%E9%A1%B5%E9%85%8D%E7%BD%AE%E4%B8%80%E4%B8%AAai%E5%B0%8F%E5%8A%A9%E6%89%8B%E6%A0%B9%E6%8D%AE%E7%BD%91%E7%AB%99%E5%86%85%E5%AE%B9%E8%A7%A3%E7%AD%94%E9%97%AE%E9%A2%98deepseek%E6%A8%A1%E5%9E%8B/images/QQ20260407-201147_hu_b89e25bc16945db5.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;3&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;72&#34;
+		data-flex-basis=&#34;174px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;博客相关的问题用 System Prompt 回答，其他问题用 AI 的通用知识回答&lt;/strong&gt;，两者互补。&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>【PVP】恶魔狼独角兽翼龙毒冰全有对策，一套阵容上大师</title>
         <link>https://Gravity2000.github.io/p/pvp%E6%81%B6%E9%AD%94%E7%8B%BC%E7%8B%AC%E8%A7%92%E5%85%BD%E7%BF%BC%E9%BE%99%E6%AF%92%E5%86%B0%E5%85%A8%E6%9C%89%E5%AF%B9%E7%AD%96%E4%B8%80%E5%A5%97%E9%98%B5%E5%AE%B9%E4%B8%8A%E5%A4%A7%E5%B8%88/</link>
         <pubDate>Mon, 30 Mar 2026 05:40:06 +0800</pubDate>
@@ -317,7 +596,7 @@
 &gt;&lt;/p&gt;
 &lt;p&gt;开7买1&lt;/p&gt;
 &lt;hr&gt;
-&lt;h2 id=&#34;3corona-blossom-vol3---58&#34;&gt;3、Corona Blossom vol.3   (5/8)
+&lt;h2 id=&#34;3corona-blossom-vol3---78&#34;&gt;3、Corona Blossom vol.3   (7/8)
 &lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://Gravity2000.github.io/p/%E9%97%AA%E5%8D%A1%E6%94%B6%E9%9B%86%E8%AE%B0%E5%BD%95/images/QQ20260325-220223.png&#34;
 	width=&#34;946&#34;
 	height=&#34;846&#34;
@@ -358,6 +637,20 @@
 		data-flex-basis=&#34;305px&#34;
 	
 &gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://Gravity2000.github.io/p/%E9%97%AA%E5%8D%A1%E6%94%B6%E9%9B%86%E8%AE%B0%E5%BD%95/images/QQ20260407-211553.png&#34;
+	width=&#34;767&#34;
+	height=&#34;511&#34;
+	srcset=&#34;https://Gravity2000.github.io/p/%E9%97%AA%E5%8D%A1%E6%94%B6%E9%9B%86%E8%AE%B0%E5%BD%95/images/QQ20260407-211553_hu_eb7a32aef12d0baf.png 480w, https://Gravity2000.github.io/p/%E9%97%AA%E5%8D%A1%E6%94%B6%E9%9B%86%E8%AE%B0%E5%BD%95/images/QQ20260407-211553_hu_7ac6843780b5360f.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Lily&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;150&#34;
+		data-flex-basis=&#34;360px&#34;
+	
+&gt;&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;4-location-love-46&#34;&gt;4、 Location Love （4/6）
 &lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://Gravity2000.github.io/p/%E9%97%AA%E5%8D%A1%E6%94%B6%E9%9B%86%E8%AE%B0%E5%BD%95/images/QQ20260325-220205.png&#34;
@@ -370,6 +663,20 @@
 		class=&#34;gallery-image&#34; 
 		data-flex-grow=&#34;112&#34;
 		data-flex-basis=&#34;268px&#34;
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://Gravity2000.github.io/p/%E9%97%AA%E5%8D%A1%E6%94%B6%E9%9B%86%E8%AE%B0%E5%BD%95/images/QQ20260405-204746.png&#34;
+	width=&#34;778&#34;
+	height=&#34;532&#34;
+	srcset=&#34;https://Gravity2000.github.io/p/%E9%97%AA%E5%8D%A1%E6%94%B6%E9%9B%86%E8%AE%B0%E5%BD%95/images/QQ20260405-204746_hu_4e07f7ef2da917bf.png 480w, https://Gravity2000.github.io/p/%E9%97%AA%E5%8D%A1%E6%94%B6%E9%9B%86%E8%AE%B0%E5%BD%95/images/QQ20260405-204746_hu_2832e8364bc7fee2.png 1024w&#34;
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Kojika Hiwa&#34;
+	
+	
+		class=&#34;gallery-image&#34; 
+		data-flex-grow=&#34;146&#34;
+		data-flex-basis=&#34;350px&#34;
 	
 &gt;&lt;/p&gt;
 &lt;hr&gt;
